@@ -1,0 +1,15 @@
+Source: scibian-plymouth
+Section: misc
+Priority: optional
+Maintainer: Scibian Packaging Team <packaging@scibian.org>
+Uploaders: Scibian Packaging Team <packaging@scibian.org>
+Build-Depends: debhelper (>= 12),
+Standards-Version: 4.3.0
+Homepage: http://www.scibian.org
+
+
+Package: scibian-plymouth
+Architecture: any
+Depends: plymouth-themes, ${shlibs:Depends}, ${misc:Depends}
+Description: Show a Scibian Theme boot screen 
+ Show a Scibian Theme boot screen  
