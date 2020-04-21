@@ -1,5 +1,11 @@
-scibian-plymouth (10.0~test1) scibian10; urgency=medium
+scibian-plymouth (10.1) scibian10; urgency=medium
 
-  * First release 
+  * Postinst modifies the default/grub to activate splash and auto
 
- -- Scibian Packaging Team <packaging@scibian.org>  Tue, 02 Jul 2019 15:36:13 +0200
+ -- Scibian Packaging Team <packaging@scibian.org>  Fri, 03 Jan 2020 16:15:10 +0100
+
+scibian-plymouth (10.0) scibian10; urgency=medium
+
+  * Initial release based on moonlight 
+
+ -- Scibian Packaging Team <packaging@scibian.org>  Fri, 03 Jan 2020 15:25:20 +0100

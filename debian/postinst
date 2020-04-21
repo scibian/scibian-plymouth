@@ -1,0 +1,23 @@
+#!/bin/sh
+
+grub_file="/etc/default/grub"
+result=`grep GRUB_CMDLINE_LINUX_DEFAULT  $grub_file |grep -c splash`
+if [ $result -eq 0 ]; then
+  # If splash option is not set. Add it
+  . $grub_file
+  line_orig=`grep GRUB_CMDLINE_LINUX_DEFAULT $grub_file `
+
+  new_grub_options=$GRUB_CMDLINE_LINUX_DEFAULT' splash'
+  sed -i "s/$GRUB_CMDLINE_LINUX_DEFAULT/$new_grub_options/"  $grub_file 
+fi
+
+# Is GRUB_GFXMODE Mode commented /etc/default/grub
+#GRUB_GFXMODE=640x480
+
+sed -i '/GRUB_GFXMODE/d' $grub_file
+echo "GRUB_GFXMODE=auto" >> $grub_file
+
+
+plymouth-set-default-theme -R scibian-plymouth
+update-grub
+update-initramfs -u 
